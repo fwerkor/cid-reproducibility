@@ -1,6 +1,6 @@
 # Provisional-state-aware interaction decoding
 
-Preserved controlled CID-v1 0.4B Stage-A ablation.
+Preserved controlled CID-v1 0.4B Stage-A ablation. This implementation-level study is reported in the paper appendix rather than as a headline main-text ablation.
 
 The two runs use the same v17 data materialization, v4 contract, four-GPU geometry, effective batch size 96, and fixed validation seed `1000003`. The mechanism difference is whether need/source/argument/refresh/routing decisions are decoded from the stale pre-update thought state or from the provisional post-update thought state.
 

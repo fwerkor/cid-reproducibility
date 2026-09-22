@@ -28,4 +28,4 @@ The current Stage-0 route was later restarted with two GPUs and an updated mater
 - `figures/stage0_component_losses.{pdf,png}` — raw mean loss plus all 24 logged Stage-A loss components
 - `scripts/plot_stage0_components.py` — deterministic regeneration script
 
-This is a strong historical diagnostic for Stage 0: direct Stage A approaches a much higher optimization plateau while the Stage-0-initialized run keeps descending. It should be described as a historical ablation unless/until a fully fresh one-variable matched rerun is performed.
+This is a historical training diagnostic for Stage 0: direct Stage A approaches a much higher optimization plateau while the Stage-0-initialized run keeps descending. The paper keeps only a compact quantitative summary in the main ablation section and reports this full component-wise analysis in the appendix. It should not be presented as a core CID contribution or as a fully fresh one-variable rerun.

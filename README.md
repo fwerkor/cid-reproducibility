@@ -7,8 +7,8 @@ The repository mirrors the paper's experiment organization:
 - `experiments/main-results/` — Section 6.2 main results (placeholder until the final evaluation freeze)
 - `experiments/efficiency/` — Section 6.3 efficiency (placeholder)
 - `experiments/scaling/` — Section 6.4 scaling (placeholder)
-- `experiments/stage0-necessity/` — Stage-0 necessity ablation, including preserved raw Stage-A metrics and a reproducible component-loss figure
-- `experiments/provisional-state-decoding/` — preserved provisional-state decoding ablation
+- `experiments/stage0-necessity/` — appendix artifact for the Stage-0 training diagnostic, including preserved raw Stage-A metrics and a reproducible component-loss figure
+- `experiments/provisional-state-decoding/` — appendix artifact for the preserved provisional-state decoding ablation
 - `placeholders/datasets/` and `placeholders/models/` — manifests for large artifacts that will be copied/pinned at release time
 
 Large model weights and full datasets are intentionally not duplicated here yet. Their final immutable identifiers/checksums will be filled in when the evaluation release is frozen.
