@@ -1,0 +1,11 @@
+# Large model/checkpoint artifacts are pinned in manifests, not committed during active experiments.
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+
+# Local/derived noise
+__pycache__/
+*.pyc
+.DS_Store
