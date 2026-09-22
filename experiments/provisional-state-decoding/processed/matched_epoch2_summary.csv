@@ -1,0 +1,5 @@
+optimizer_steps,validation_seed,metric,stale,provisional
+62645,1000003,materialized_display_exact_rate,0.136067458796,0.227758007117
+62645,1000003,display_token_accuracy,0.203953620985,0.277466367713
+62645,1000003,need_f1,0.0192,0.0910470409712
+62645,1000003,rollout_recovery_failure_rate,0.0813786500718,0.0580912863071
