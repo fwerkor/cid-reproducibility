@@ -1,0 +1,185 @@
++ /workspace/continuous-interaction-diffusion/.venv/bin/python -m torch.distributed.run --standalone --nproc-per-node=3 -m cid.cli train --data /workspace/data/CID-Dataset/release/training-trajectories.jsonl --validation-data /workspace/data/CID-Dataset/evaluation/validation-v4/validation-512.jsonl --output-dir /workspace/cid-v1-2b-production/stage-a --model openbmb/MiniCPM5-2B-Base --device cuda --dtype bf16 --epochs 3 --learning-rate 1e-4 --weight-decay 0.01 --micro-batch-size 1 --target-global-batch-size 96 --gradient-checkpointing --max-grad-norm 1.0 --rollout-horizon 3 --teacher-forcing-epochs 1 --rollout-ramp-epochs 2 --semantic-pooling order-aware-v2 --thought-capacity 128 --max-display-tokens 1536 --display-canvas-tokens 64 --log-every-steps 100 --checkpoint-every-steps 1000 
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
++ /workspace/continuous-interaction-diffusion/.venv/bin/python -m torch.distributed.run --standalone --nproc-per-node=3 -m cid.cli train --data /workspace/data/CID-Dataset/release/training-trajectories.jsonl --validation-data /workspace/data/CID-Dataset/evaluation/validation-v4/validation-512.jsonl --output-dir /workspace/cid-v1-2b-production/stage-a --model openbmb/MiniCPM5-2B-Base --device cuda --dtype bf16 --epochs 3 --learning-rate 1e-4 --weight-decay 0.01 --micro-batch-size 1 --target-global-batch-size 96 --gradient-checkpointing --max-grad-norm 1.0 --rollout-horizon 3 --teacher-forcing-epochs 1 --rollout-ramp-epochs 2 --semantic-pooling order-aware-v2 --thought-capacity 128 --max-display-tokens 1536 --display-canvas-tokens 64 --log-every-steps 100 --checkpoint-every-steps 1000 
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+`torch_dtype` is deprecated! Use `dtype` instead!
+/workspace/continuous-interaction-diffusion/.venv/lib/python3.13/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+[rank0]:[W916 05:26:06.716114694 ProcessGroupNCCL.cpp:5310] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+device=cuda:0 world_size=3 dtype=bf16 examples=422230 transitions=3146786 validation_examples=512 validation_transitions=3449 trainable_parameters=176662753 effective_batch=96 target_global_batch=96 grad_accum=32 physical_micro_batch=1 grouped_moe_layers=0
+progress epoch=1 optimizer_steps=100 raw_loss=10.908252 weighted_loss=10.559613 lr=0.0001 windows=421/141637
+progress epoch=1 optimizer_steps=200 raw_loss=9.265176 weighted_loss=8.520370 lr=0.0001 windows=846/141637
+progress epoch=1 optimizer_steps=300 raw_loss=8.645345 weighted_loss=8.526463 lr=0.0001 windows=1299/141637
+progress epoch=1 optimizer_steps=400 raw_loss=8.252932 weighted_loss=7.509617 lr=0.0001 windows=1724/141637
+progress epoch=1 optimizer_steps=500 raw_loss=8.074034 weighted_loss=7.529816 lr=0.0001 windows=2147/141637
+progress epoch=1 optimizer_steps=600 raw_loss=7.756225 weighted_loss=7.488297 lr=0.0001 windows=2578/141637
+progress epoch=1 optimizer_steps=700 raw_loss=7.550950 weighted_loss=7.403211 lr=0.0001 windows=3012/141637
+progress epoch=1 optimizer_steps=800 raw_loss=7.502761 weighted_loss=7.165193 lr=0.0001 windows=3449/141637
+progress epoch=1 optimizer_steps=900 raw_loss=7.506877 weighted_loss=6.992233 lr=0.0001 windows=3880/141637
+progress epoch=1 optimizer_steps=1000 raw_loss=7.401597 weighted_loss=7.045701 lr=0.0001 windows=4303/141637
+/workspace/continuous-interaction-diffusion/.venv/lib/python3.13/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+checkpoint optimizer_steps=1000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
++ /workspace/continuous-interaction-diffusion/.venv/bin/python -m torch.distributed.run --standalone --nproc-per-node=3 -m cid.cli train --data /workspace/data/CID-Dataset/release/training-trajectories.jsonl --validation-data /workspace/data/CID-Dataset/evaluation/validation-v4/validation-512.jsonl --output-dir /workspace/cid-v1-2b-production/stage-a --model openbmb/MiniCPM5-2B-Base --resume /workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt --device cuda --dtype bf16 --epochs 3 --learning-rate 1e-4 --weight-decay 0.01 --micro-batch-size 1 --target-global-batch-size 96 --gradient-checkpointing --max-grad-norm 1.0 --rollout-horizon 3 --teacher-forcing-epochs 1 --rollout-ramp-epochs 2 --semantic-pooling order-aware-v2 --thought-capacity 128 --max-display-tokens 1536 --display-canvas-tokens 64 --log-every-steps 100 --checkpoint-every-steps 1000 
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
++ /workspace/continuous-interaction-diffusion/.venv/bin/python -m torch.distributed.run --standalone --nproc-per-node=3 -m cid.cli train --data /workspace/data/CID-Dataset/release/training-trajectories.jsonl --validation-data /workspace/data/CID-Dataset/evaluation/validation-v4/validation-512.jsonl --output-dir /workspace/cid-v1-2b-production/stage-a --model openbmb/MiniCPM5-2B-Base --resume /workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt --device cuda --dtype bf16 --epochs 3 --learning-rate 1e-4 --weight-decay 0.01 --micro-batch-size 1 --target-global-batch-size 96 --gradient-checkpointing --max-grad-norm 1.0 --rollout-horizon 3 --teacher-forcing-epochs 1 --rollout-ramp-epochs 2 --semantic-pooling order-aware-v2 --thought-capacity 128 --max-display-tokens 1536 --display-canvas-tokens 64 --log-every-steps 100 --checkpoint-every-steps 1000 
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+`torch_dtype` is deprecated! Use `dtype` instead!
+/workspace/continuous-interaction-diffusion/.venv/lib/python3.13/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+[rank0]:[W916 10:07:07.470944848 ProcessGroupNCCL.cpp:5310] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+device=cuda:0 world_size=3 dtype=bf16 examples=422230 transitions=3146786 validation_examples=512 validation_transitions=3449 trainable_parameters=176662753 effective_batch=96 target_global_batch=96 grad_accum=32 physical_micro_batch=1 grouped_moe_layers=0
+resume epoch=1 optimizer_steps=1000 windows_seen=4303/141637
+progress epoch=1 optimizer_steps=1100 raw_loss=7.626477 weighted_loss=6.783998 lr=0.0001 windows=4718/141637
+progress epoch=1 optimizer_steps=1200 raw_loss=7.369191 weighted_loss=7.291226 lr=0.0001 windows=5163/141637
+progress epoch=1 optimizer_steps=1300 raw_loss=7.243124 weighted_loss=6.621733 lr=0.0001 windows=5598/141637
+progress epoch=1 optimizer_steps=1400 raw_loss=7.358943 weighted_loss=6.797458 lr=0.0001 windows=6028/141637
+progress epoch=1 optimizer_steps=1500 raw_loss=7.591991 weighted_loss=6.750809 lr=0.0001 windows=6444/141637
+progress epoch=1 optimizer_steps=1600 raw_loss=7.423545 weighted_loss=6.753404 lr=0.0001 windows=6845/141637
+progress epoch=1 optimizer_steps=1700 raw_loss=7.218778 weighted_loss=6.457580 lr=0.0001 windows=7260/141637
+progress epoch=1 optimizer_steps=1800 raw_loss=7.154400 weighted_loss=6.722889 lr=0.0001 windows=7682/141637
+progress epoch=1 optimizer_steps=1900 raw_loss=7.133712 weighted_loss=6.451981 lr=0.0001 windows=8103/141637
+progress epoch=1 optimizer_steps=2000 raw_loss=6.993528 weighted_loss=6.646699 lr=0.0001 windows=8541/141637
+/workspace/continuous-interaction-diffusion/.venv/lib/python3.13/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+checkpoint optimizer_steps=2000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
+progress epoch=1 optimizer_steps=2100 raw_loss=7.090599 weighted_loss=7.207440 lr=0.0001 windows=8978/141637
+progress epoch=1 optimizer_steps=2200 raw_loss=7.253931 weighted_loss=6.254546 lr=0.0001 windows=9393/141637
+progress epoch=1 optimizer_steps=2300 raw_loss=7.110034 weighted_loss=6.367027 lr=0.0001 windows=9827/141637
+progress epoch=1 optimizer_steps=2400 raw_loss=7.030727 weighted_loss=6.564444 lr=0.0001 windows=10250/141637
+progress epoch=1 optimizer_steps=2500 raw_loss=7.149092 weighted_loss=6.441647 lr=0.0001 windows=10649/141637
+progress epoch=1 optimizer_steps=2600 raw_loss=6.901881 weighted_loss=6.545789 lr=0.0001 windows=11101/141637
+progress epoch=1 optimizer_steps=2700 raw_loss=6.986731 weighted_loss=6.556504 lr=0.0001 windows=11533/141637
+progress epoch=1 optimizer_steps=2800 raw_loss=6.944442 weighted_loss=6.230487 lr=0.0001 windows=11956/141637
+progress epoch=1 optimizer_steps=2900 raw_loss=6.922497 weighted_loss=6.202709 lr=0.0001 windows=12370/141637
+progress epoch=1 optimizer_steps=3000 raw_loss=6.999486 weighted_loss=6.846327 lr=0.0001 windows=12806/141637
+checkpoint optimizer_steps=3000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
+progress epoch=1 optimizer_steps=3100 raw_loss=6.806377 weighted_loss=6.263195 lr=0.0001 windows=13223/141637
+progress epoch=1 optimizer_steps=3200 raw_loss=7.007880 weighted_loss=6.496826 lr=0.0001 windows=13647/141637
+progress epoch=1 optimizer_steps=3300 raw_loss=6.774769 weighted_loss=6.541584 lr=0.0001 windows=14102/141637
+progress epoch=1 optimizer_steps=3400 raw_loss=6.838558 weighted_loss=6.400667 lr=0.0001 windows=14529/141637
+progress epoch=1 optimizer_steps=3500 raw_loss=7.073611 weighted_loss=6.433409 lr=0.0001 windows=14947/141637
+progress epoch=1 optimizer_steps=3600 raw_loss=6.895100 weighted_loss=6.127156 lr=0.0001 windows=15350/141637
+progress epoch=1 optimizer_steps=3700 raw_loss=6.716076 weighted_loss=6.090194 lr=0.0001 windows=15784/141637
+progress epoch=1 optimizer_steps=3800 raw_loss=6.675112 weighted_loss=6.272790 lr=0.0001 windows=16211/141637
+progress epoch=1 optimizer_steps=3900 raw_loss=6.693457 weighted_loss=5.999735 lr=0.0001 windows=16638/141637
+progress epoch=1 optimizer_steps=4000 raw_loss=6.764382 weighted_loss=6.322414 lr=0.0001 windows=17070/141637
+checkpoint optimizer_steps=4000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
+progress epoch=1 optimizer_steps=4100 raw_loss=6.891090 weighted_loss=6.462300 lr=0.0001 windows=17485/141637
+progress epoch=1 optimizer_steps=4200 raw_loss=6.835949 weighted_loss=6.455652 lr=0.0001 windows=17906/141637
+progress epoch=1 optimizer_steps=4300 raw_loss=6.692249 weighted_loss=6.460856 lr=0.0001 windows=18335/141637
+progress epoch=1 optimizer_steps=4400 raw_loss=6.689013 weighted_loss=6.718630 lr=0.0001 windows=18775/141637
+progress epoch=1 optimizer_steps=4500 raw_loss=6.786185 weighted_loss=6.412280 lr=0.0001 windows=19200/141637
+progress epoch=1 optimizer_steps=4600 raw_loss=6.612493 weighted_loss=6.209152 lr=0.0001 windows=19636/141637
+progress epoch=1 optimizer_steps=4700 raw_loss=6.725176 weighted_loss=6.270932 lr=0.0001 windows=20075/141637
+progress epoch=1 optimizer_steps=4800 raw_loss=6.772843 weighted_loss=6.401980 lr=0.0001 windows=20501/141637
+progress epoch=1 optimizer_steps=4900 raw_loss=6.753389 weighted_loss=6.327519 lr=0.0001 windows=20929/141637
+progress epoch=1 optimizer_steps=5000 raw_loss=6.776248 weighted_loss=6.043390 lr=0.0001 windows=21346/141637
+checkpoint optimizer_steps=5000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
+progress epoch=1 optimizer_steps=5100 raw_loss=6.614155 weighted_loss=6.158717 lr=0.0001 windows=21776/141637
+progress epoch=1 optimizer_steps=5200 raw_loss=6.761227 weighted_loss=5.988367 lr=0.0001 windows=22195/141637
+progress epoch=1 optimizer_steps=5300 raw_loss=6.735301 weighted_loss=5.763574 lr=0.0001 windows=22601/141637
+progress epoch=1 optimizer_steps=5400 raw_loss=6.593319 weighted_loss=5.692664 lr=0.0001 windows=23022/141637
+progress epoch=1 optimizer_steps=5500 raw_loss=6.701505 weighted_loss=6.070137 lr=0.0001 windows=23453/141637
+progress epoch=1 optimizer_steps=5600 raw_loss=6.642529 weighted_loss=6.357249 lr=0.0001 windows=23895/141637
+progress epoch=1 optimizer_steps=5700 raw_loss=6.463795 weighted_loss=6.284317 lr=0.0001 windows=24345/141637
+progress epoch=1 optimizer_steps=5800 raw_loss=6.608224 weighted_loss=6.163591 lr=0.0001 windows=24781/141637
+progress epoch=1 optimizer_steps=5900 raw_loss=6.493857 weighted_loss=6.041896 lr=0.0001 windows=25219/141637
+progress epoch=1 optimizer_steps=6000 raw_loss=6.521181 weighted_loss=5.897393 lr=0.0001 windows=25650/141637
+checkpoint optimizer_steps=6000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
+progress epoch=1 optimizer_steps=6100 raw_loss=6.677990 weighted_loss=5.661783 lr=0.0001 windows=26047/141637
+progress epoch=1 optimizer_steps=6200 raw_loss=6.520834 weighted_loss=5.937195 lr=0.0001 windows=26488/141637
+progress epoch=1 optimizer_steps=6300 raw_loss=6.631520 weighted_loss=6.082564 lr=0.0001 windows=26919/141637
+progress epoch=1 optimizer_steps=6400 raw_loss=6.645163 weighted_loss=5.820035 lr=0.0001 windows=27330/141637
+progress epoch=1 optimizer_steps=6500 raw_loss=6.491336 weighted_loss=6.451016 lr=0.0001 windows=27775/141637
+progress epoch=1 optimizer_steps=6600 raw_loss=6.598597 weighted_loss=6.116603 lr=0.0001 windows=28218/141637
+progress epoch=1 optimizer_steps=6700 raw_loss=6.599377 weighted_loss=6.250970 lr=0.0001 windows=28657/141637
+progress epoch=1 optimizer_steps=6800 raw_loss=6.476212 weighted_loss=6.036122 lr=0.0001 windows=29088/141637
+progress epoch=1 optimizer_steps=6900 raw_loss=6.561961 weighted_loss=6.165252 lr=0.0001 windows=29524/141637
+progress epoch=1 optimizer_steps=7000 raw_loss=6.471659 weighted_loss=6.035499 lr=0.0001 windows=29955/141637
+checkpoint optimizer_steps=7000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
+progress epoch=1 optimizer_steps=7100 raw_loss=6.443660 weighted_loss=6.392271 lr=0.0001 windows=30396/141637
+progress epoch=1 optimizer_steps=7200 raw_loss=6.462255 weighted_loss=6.084855 lr=0.0001 windows=30848/141637
+progress epoch=1 optimizer_steps=7300 raw_loss=6.556694 weighted_loss=5.880743 lr=0.0001 windows=31255/141637
+progress epoch=1 optimizer_steps=7400 raw_loss=6.515727 weighted_loss=5.994164 lr=0.0001 windows=31685/141637
+progress epoch=1 optimizer_steps=7500 raw_loss=6.501403 weighted_loss=6.088854 lr=0.0001 windows=32116/141637
+progress epoch=1 optimizer_steps=7600 raw_loss=6.546581 weighted_loss=6.205066 lr=0.0001 windows=32550/141637
+progress epoch=1 optimizer_steps=7700 raw_loss=6.719638 weighted_loss=6.355482 lr=0.0001 windows=32964/141637
+progress epoch=1 optimizer_steps=7800 raw_loss=6.498081 weighted_loss=5.906316 lr=0.0001 windows=33393/141637
+progress epoch=1 optimizer_steps=7900 raw_loss=6.441223 weighted_loss=5.442156 lr=0.0001 windows=33812/141637
+progress epoch=1 optimizer_steps=8000 raw_loss=6.630907 weighted_loss=5.941469 lr=0.0001 windows=34221/141637
+checkpoint optimizer_steps=8000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
+progress epoch=1 optimizer_steps=8100 raw_loss=6.426294 weighted_loss=5.641748 lr=0.0001 windows=34642/141637
+progress epoch=1 optimizer_steps=8200 raw_loss=6.482777 weighted_loss=6.008121 lr=0.0001 windows=35051/141637
+progress epoch=1 optimizer_steps=8300 raw_loss=6.376311 weighted_loss=6.115821 lr=0.0001 windows=35484/141637
+progress epoch=1 optimizer_steps=8400 raw_loss=6.257656 weighted_loss=6.045209 lr=0.0001 windows=35932/141637
+progress epoch=1 optimizer_steps=8500 raw_loss=6.471655 weighted_loss=6.259520 lr=0.0001 windows=36368/141637
+progress epoch=1 optimizer_steps=8600 raw_loss=6.390739 weighted_loss=5.804370 lr=0.0001 windows=36793/141637
+progress epoch=1 optimizer_steps=8700 raw_loss=6.362004 weighted_loss=5.888630 lr=0.0001 windows=37232/141637
+progress epoch=1 optimizer_steps=8800 raw_loss=6.500179 weighted_loss=5.702890 lr=0.0001 windows=37652/141637
+progress epoch=1 optimizer_steps=8900 raw_loss=6.460574 weighted_loss=5.815407 lr=0.0001 windows=38070/141637
+progress epoch=1 optimizer_steps=9000 raw_loss=6.630732 weighted_loss=6.022094 lr=0.0001 windows=38491/141637
+checkpoint optimizer_steps=9000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
+progress epoch=1 optimizer_steps=9100 raw_loss=6.453298 weighted_loss=5.790179 lr=0.0001 windows=38927/141637
+progress epoch=1 optimizer_steps=9200 raw_loss=6.225073 weighted_loss=6.186321 lr=0.0001 windows=39366/141637
+progress epoch=1 optimizer_steps=9300 raw_loss=6.380413 weighted_loss=5.640075 lr=0.0001 windows=39796/141637
+progress epoch=1 optimizer_steps=9400 raw_loss=6.498558 weighted_loss=5.864780 lr=0.0001 windows=40223/141637
+progress epoch=1 optimizer_steps=9500 raw_loss=6.382018 weighted_loss=5.914401 lr=0.0001 windows=40647/141637
+progress epoch=1 optimizer_steps=9600 raw_loss=6.615419 weighted_loss=6.205255 lr=0.0001 windows=41072/141637
+progress epoch=1 optimizer_steps=9700 raw_loss=6.504652 weighted_loss=5.669547 lr=0.0001 windows=41494/141637
+progress epoch=1 optimizer_steps=9800 raw_loss=6.417576 weighted_loss=5.846834 lr=0.0001 windows=41919/141637
+progress epoch=1 optimizer_steps=9900 raw_loss=6.533244 weighted_loss=6.154732 lr=0.0001 windows=42345/141637
+progress epoch=1 optimizer_steps=10000 raw_loss=6.602583 weighted_loss=5.941563 lr=0.0001 windows=42762/141637
+checkpoint optimizer_steps=10000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
+progress epoch=1 optimizer_steps=10100 raw_loss=6.262717 weighted_loss=5.637915 lr=0.0001 windows=43200/141637
+progress epoch=1 optimizer_steps=10200 raw_loss=6.506202 weighted_loss=5.365894 lr=0.0001 windows=43609/141637
+progress epoch=1 optimizer_steps=10300 raw_loss=6.533650 weighted_loss=5.451465 lr=0.0001 windows=44011/141637
+progress epoch=1 optimizer_steps=10400 raw_loss=6.210863 weighted_loss=5.749711 lr=0.0001 windows=44445/141637
+progress epoch=1 optimizer_steps=10500 raw_loss=6.453580 weighted_loss=6.098117 lr=0.0001 windows=44868/141637
+progress epoch=1 optimizer_steps=10600 raw_loss=6.247188 weighted_loss=5.752436 lr=0.0001 windows=45303/141637
+progress epoch=1 optimizer_steps=10700 raw_loss=6.525232 weighted_loss=6.404176 lr=0.0001 windows=45742/141637
+progress epoch=1 optimizer_steps=10800 raw_loss=6.357170 weighted_loss=6.044063 lr=0.0001 windows=46176/141637
+progress epoch=1 optimizer_steps=10900 raw_loss=6.397079 weighted_loss=5.893348 lr=0.0001 windows=46600/141637
+progress epoch=1 optimizer_steps=11000 raw_loss=6.570869 weighted_loss=5.547889 lr=0.0001 windows=47007/141637
+checkpoint optimizer_steps=11000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
+progress epoch=1 optimizer_steps=11100 raw_loss=6.349023 weighted_loss=5.962391 lr=0.0001 windows=47428/141637
+progress epoch=1 optimizer_steps=11200 raw_loss=6.336945 weighted_loss=5.689066 lr=0.0001 windows=47848/141637
+progress epoch=1 optimizer_steps=11300 raw_loss=6.135108 weighted_loss=5.651079 lr=0.0001 windows=48282/141637
+progress epoch=1 optimizer_steps=11400 raw_loss=6.284369 weighted_loss=5.375132 lr=0.0001 windows=48695/141637
+progress epoch=1 optimizer_steps=11500 raw_loss=6.427505 weighted_loss=5.777741 lr=0.0001 windows=49112/141637
+progress epoch=1 optimizer_steps=11600 raw_loss=6.383978 weighted_loss=5.798214 lr=0.0001 windows=49528/141637
+progress epoch=1 optimizer_steps=11700 raw_loss=6.457368 weighted_loss=5.730047 lr=0.0001 windows=49951/141637
+progress epoch=1 optimizer_steps=11800 raw_loss=6.114559 weighted_loss=6.042855 lr=0.0001 windows=50398/141637
+progress epoch=1 optimizer_steps=11900 raw_loss=6.354902 weighted_loss=5.923822 lr=0.0001 windows=50825/141637
+progress epoch=1 optimizer_steps=12000 raw_loss=6.266012 weighted_loss=5.839103 lr=0.0001 windows=51274/141637
+checkpoint optimizer_steps=12000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
+progress epoch=1 optimizer_steps=12100 raw_loss=6.074750 weighted_loss=6.097494 lr=0.0001 windows=51730/141637
+progress epoch=1 optimizer_steps=12200 raw_loss=6.463328 weighted_loss=6.408494 lr=0.0001 windows=52167/141637
+progress epoch=1 optimizer_steps=12300 raw_loss=6.576166 weighted_loss=6.087416 lr=0.0001 windows=52596/141637
+progress epoch=1 optimizer_steps=12400 raw_loss=6.330190 weighted_loss=6.007833 lr=0.0001 windows=53037/141637
+progress epoch=1 optimizer_steps=12500 raw_loss=6.340652 weighted_loss=5.681603 lr=0.0001 windows=53465/141637
+progress epoch=1 optimizer_steps=12600 raw_loss=6.299165 weighted_loss=5.614873 lr=0.0001 windows=53891/141637
+progress epoch=1 optimizer_steps=12700 raw_loss=6.260163 weighted_loss=5.772972 lr=0.0001 windows=54332/141637
+progress epoch=1 optimizer_steps=12800 raw_loss=6.125594 weighted_loss=5.703488 lr=0.0001 windows=54783/141637
+progress epoch=1 optimizer_steps=12900 raw_loss=6.251620 weighted_loss=5.705318 lr=0.0001 windows=55207/141637
+progress epoch=1 optimizer_steps=13000 raw_loss=6.264498 weighted_loss=5.689363 lr=0.0001 windows=55638/141637
+checkpoint optimizer_steps=13000 path=/workspace/cid-v1-2b-production/stage-a/stage-a-latest.pt
+progress epoch=1 optimizer_steps=13100 raw_loss=6.329078 weighted_loss=5.588424 lr=0.0001 windows=56059/141637
+progress epoch=1 optimizer_steps=13200 raw_loss=6.259863 weighted_loss=6.190599 lr=0.0001 windows=56505/141637
+progress epoch=1 optimizer_steps=13300 raw_loss=6.244753 weighted_loss=5.586677 lr=0.0001 windows=56928/141637
